@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:image="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="engie_maintenance_app.Views.QrScanningPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <NavigationPage.TitleView>
+        <Grid ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{OnPlatform Android=70, iOS=106}"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="140"/>
+            </Grid.ColumnDefinitions>
+            
+            <image:SvgCachedImage Grid.Column="1" Style="{StaticResource ToolbarLogoWithBackButtonStyle}"/>
+            
+            <Label Grid.Column="2"
+                   Style="{StaticResource ToolbarLabelWithBackButtonStyle}"
+                   Text="QR Scanner"/>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <StackLayout BackgroundColor="{Binding BackgroundColor}">
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid BackgroundColor="{StaticResource EngieBlueColor}" Grid.Row="0">
+                <Frame HasShadow="True"
+                       Padding="0"
+                       Style="{StaticResource RoundedFrameStyle}">
+                    <Grid>
+                        <zxing:ZXingScannerView x:Name="ScanView"
+                                                IsScanning="True"
+                                                OnScanResult="ZxingOnScanResult"/>
+
+                        <zxing:ZXingDefaultOverlay BottomText="Scanning will happen automatically" 
+                                                   Opacity="0.9"
+                                                   TopText="Hold your phone up to the QR code"/>
+
+                        <ActivityIndicator x:Name="ActIndicator"
+                                           HorizontalOptions="Center"
+                                           IsVisible="false"
+                                           VerticalOptions="Center"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+
+            <Grid Grid.Row="1" Margin="8,16,8,8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Clicked="FlashButtonClicked"
+                        Grid.Column="0"
+                        Style="{StaticResource ActionButtonStyle}"
+                        Text="Flash"/>
+
+                <Button Clicked="SelectFromGalleryClicked"
+                        Grid.Column="1"
+                        Style="{StaticResource ActionButtonStyle}"
+                        Text="Upload an Image"/>
+            </Grid>
+        </Grid>
+    </StackLayout>
+</ContentPage>
+

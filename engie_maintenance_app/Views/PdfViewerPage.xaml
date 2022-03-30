@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xForms="clr-namespace:Syncfusion.SfPdfViewer.XForms;assembly=Syncfusion.SfPdfViewer.XForms"
+             xmlns:image="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="engie_maintenance_app.Views.PdfViewerPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <NavigationPage.TitleView>
+        <Grid ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{OnPlatform Android=70, iOS=106}"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="140"/>
+            </Grid.ColumnDefinitions>
+            
+            <image:SvgCachedImage Grid.Column="1" Style="{StaticResource ToolbarLogoWithBackButtonStyle}"/>
+            
+            <Label Grid.Column="2"
+                   Style="{StaticResource ToolbarLabelWithBackButtonStyle}"
+                   Text="Form Editor"/>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <StackLayout BackgroundColor="{StaticResource EngieBlueColor}">
+        <Frame Margin="0" Style="{StaticResource RoundedFrameStyle}" Padding="0">
+            <Grid x:Name="pdfViewGrid">
+                <xForms:SfPdfViewer x:Name="pdfViewerControl" />
+            </Grid>
+        </Frame>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:image="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="engie_maintenance_app.Views.AdminPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="Admin Home Page"
+                   Style="{StaticResource ToolbarLabelWithoutBackButtonStyle}"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <StackLayout BackgroundColor="{StaticResource EngieBlueColor}">
+        <Frame Style="{StaticResource RoundedFrameStyle}">
+            <Grid Padding="8,8,8,16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!--Engie Logo-->
+                <image:SvgCachedImage Grid.Row="0"
+                                      Margin="0, 0, 0, 16"
+                                      Style="{StaticResource MainBlueLogo}"/>
+
+                <!--Grid of buttons-->
+                <StackLayout Grid.Row="1">
+                    <Grid ColumnSpacing="16" RowSpacing="32">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition Width="0.5*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <!--Upload New Form Page Button-->
+                        <StackLayout Grid.Column="0" Grid.Row="0">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1"
+                                                      Tapped="RedirectUploadForm"/>
+                            </StackLayout.GestureRecognizers>
+
+                            <Frame Style="{StaticResource MenuFrameStyle}">
+                                <StackLayout>
+                                    <Frame x:Name="Icon1"
+                                           VerticalOptions="Start"
+                                           HeightRequest="{Binding Width, Source={x:Reference Icon1}}"
+                                           Style="{StaticResource SecondMenuFrameStyle}">
+
+                                        <!--Button Icon-->
+                                        <image:SvgCachedImage Source="resource://engie_maintenance_app.Resources.Images.document_upload_blue.svg"/>
+                                    </Frame>
+
+                                    <!--Button Title-->
+                                    <Label Style="{StaticResource ToolbarLabelWithoutBackButtonStyle}" 
+                                           Text="Upload Form"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                        <!--Change Recipient Address Page Button-->
+                        <StackLayout Grid.Column="1" Grid.Row="0">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1"
+                                                      Tapped="RedirectToChangeAddress"/>
+                            </StackLayout.GestureRecognizers>
+
+                            <Frame Style="{StaticResource MenuFrameStyle}">
+                                <StackLayout>
+                                    <Frame x:Name="Icon2" 
+                                           VerticalOptions="Start"
+                                           HeightRequest="{Binding Width, Source={x:Reference Icon2}}"
+                                           Style="{StaticResource SecondMenuFrameStyle}">
+                                        <!--Button Icon-->
+                                        <image:SvgCachedImage Source="resource://engie_maintenance_app.Resources.Images.envelope_blue.svg"/>
+                                    </Frame>
+
+                                    <!--Button Title-->
+                                    <Label Style="{StaticResource ToolbarLabelWithoutBackButtonStyle}"
+                                           Text="Recipients"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                        <!--Settings Page Button-->
+                        <StackLayout Grid.Column="0" Grid.Row="1">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1"
+                                                      Tapped="RedirectToSettings"/>
+                            </StackLayout.GestureRecognizers>
+
+                            <Frame Style="{StaticResource MenuFrameStyle}">
+                                <StackLayout>
+                                    <Frame x:Name="Icon3" 
+                                           VerticalOptions="Start"
+                                           HeightRequest="{Binding Width, Source={x:Reference Icon3}}"
+                                           Style="{StaticResource SecondMenuFrameStyle}">
+
+                                        <!--Button Icon-->
+                                        <image:SvgCachedImage Source="resource://engie_maintenance_app.Resources.Images.tools_blue.svg"/>
+                                    </Frame>
+
+                                    <!--Button Title-->
+                                    <Label Style="{StaticResource ToolbarLabelWithoutBackButtonStyle}"
+                                           Text="Settings"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                        <!--Help Page Button-->
+                        <StackLayout Grid.Column="1" Grid.Row="1">
+
+                            <!--Redirect to page after taping-->
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1"
+                                                      Tapped="RedirectToHelp"/>
+                            </StackLayout.GestureRecognizers>
+
+                            <Frame Style="{StaticResource MenuFrameStyle}">
+                                <StackLayout>
+                                    <Frame x:Name="Icon4" 
+                                           VerticalOptions="Start"
+                                           HeightRequest="{Binding Width, Source={x:Reference Icon4}}"
+                                           Style="{StaticResource SecondMenuFrameStyle}">
+
+                                        <!--Button Icon-->
+                                        <image:SvgCachedImage Source="resource://engie_maintenance_app.Resources.Images.enlighten_blue.svg"/>
+                                    </Frame>
+
+                                    <!--Button Title-->
+                                    <Label Style="{StaticResource ToolbarLabelWithoutBackButtonStyle}"
+                                           Text="Help"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+        </Frame>
+    </StackLayout>
+</ContentPage>

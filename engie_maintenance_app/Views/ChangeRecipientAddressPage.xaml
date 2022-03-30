@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:interfaces="clr-namespace:engie_maintenance_app.Interfaces;assembly=engie_maintenance_app"
+             xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="engie_maintenance_app.Views.ChangeRecipientAddressPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <NavigationPage.TitleView>
+        <Grid ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{OnPlatform Android=70, iOS=106}"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="140"/>
+            </Grid.ColumnDefinitions>
+
+            <forms:SvgCachedImage Grid.Column="1" Style="{StaticResource ToolbarLogoWithBackButtonStyle}"/>
+
+            <Label Grid.Column="2"
+                   Style="{StaticResource ToolbarLabelWithBackButtonStyle}"
+                   Text="Recipients"/>
+        </Grid>
+    </NavigationPage.TitleView>
+    
+    <StackLayout BackgroundColor="{StaticResource EngieBlueColor}">
+        <Frame Style="{StaticResource RoundedFrameStyle}">
+         <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="0" Margin="8,0">
+                    <Label Style="{StaticResource TitleLabelStyle}"
+                           Text="Select a form type to change the recipient email address for that type of form"/>
+
+                    <interfaces:CustomPicker x:Name="FormType"
+                                             FontSize="14"
+                                             HeightRequest="48"
+                                             Margin="0,0,0,8"
+                                             TextColor="{Binding TextColor1}"
+                                             Title="Select Form Type"
+                                             TitleColor="{StaticResource EngieBlueColor}">
+                    </interfaces:CustomPicker>
+                    
+                    <Label x:Name="CurrentRecipient"
+                           IsVisible="False"
+                           Margin="0,8"
+                           Style="{StaticResource TitleLabelStyle}"/>
+
+                    <Button Clicked="CurrentRecipientButtonClicked"
+                            Style="{StaticResource ActionButtonStyle}"
+                            Margin="0,8"
+                            Text="Get Current Recipient Email"/>
+                    
+                    <interfaces:CustomEntry x:Name="NewEmailEntry"
+                                            Margin="0,8"
+                                            Placeholder="New form recipient"
+                                            Style="{StaticResource LoginEntryStyle}"/>
+
+                    <Button Clicked="SubmitButtonClicked"
+                            Margin="0,8"
+                            Style="{StaticResource ActionButtonStyle}"
+                            Text="Submit"/>
+                </StackLayout>
+             </Grid>
+        </Frame>
+    </StackLayout>
+</ContentPage>

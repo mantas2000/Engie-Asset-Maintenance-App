@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:common="clr-namespace:ZXing.Common;assembly=zxing.portable"
+             xmlns:interfaces="clr-namespace:engie_maintenance_app.Interfaces;assembly=engie_maintenance_app"
+             xmlns:image="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="engie_maintenance_app.Views.UploadNewFormPage">
+        
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <NavigationPage.TitleView>
+        <Grid ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{OnPlatform Android=70, iOS=106}"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="140"/>
+            </Grid.ColumnDefinitions>
+            
+            <image:SvgCachedImage Grid.Column="1" Style="{StaticResource ToolbarLogoWithBackButtonStyle}"/>
+            
+            <Label Grid.Column="2"
+                   Style="{StaticResource ToolbarLabelWithBackButtonStyle}"
+                   Text="Form Upload"/>
+        </Grid>
+    </NavigationPage.TitleView>
+    
+    <StackLayout BackgroundColor="{StaticResource EngieBlueColor}">
+        <Frame Style="{StaticResource RoundedFrameStyle}">
+            <ScrollView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                
+                    <StackLayout Margin="8,0">
+                        <Label Style="{StaticResource TitleLabelStyle}"
+                               Text="Upload New Form"/>
+
+                        <Button Clicked="SelectFormClicked"
+                                Style="{StaticResource ActionButtonStyle}"
+                                Margin="0,16"
+                                Text="Open form"/>
+                        
+                        <interfaces:CustomEntry x:Name="FilePathLabel"
+                                                IsReadOnly="True"
+                                                Placeholder="Selected File: "
+                                                Style="{StaticResource LoginEntryStyle}"/>
+
+                        <interfaces:CustomPicker x:Name="FormTypePicker"
+                                                 FontSize="{Binding FontSize3}"
+                                                 HeightRequest="48"
+                                                 Margin="0,0,0,16"
+                                                 TextColor="{Binding TextColor1}"
+                                                 FontFamily="{OnPlatform iOS=Lato-Regular, Android=Lato-Regular.ttf#}"
+                                                 Title="Select a Form Type"
+                                                 TitleColor="{StaticResource EngieBlueColor}"/>
+
+                        <interfaces:CustomEntry x:Name="FormName"
+                                                Placeholder="Write a name for the form"
+                                                Style="{StaticResource LoginEntryStyle}"/>
+
+                        <Button Clicked="UploadSelectedPdf"
+                                Margin="0,0,0,32"
+                                Text="Upload Form and Generate Qr Code"
+                                Style="{StaticResource ActionButtonStyle}"/>
+                    </StackLayout>
+                    
+                    <Grid Grid.Row="2">
+                        <StackLayout Margin="8,0">
+                            <forms:ZXingBarcodeImageView x:Name="QrImageView"
+                                                         BarcodeFormat="QR_CODE"
+                                                         BarcodeValue="Example"
+                                                         HeightRequest="400"
+                                                         HorizontalOptions="Center"
+                                                         IsVisible="False"
+                                                         WidthRequest="400"
+                                                         VerticalOptions="Center">
+                                <forms:ZXingBarcodeImageView.BarcodeOptions>
+                                    <common:EncodingOptions Width="400" Height="400"/>
+                                </forms:ZXingBarcodeImageView.BarcodeOptions>
+                            </forms:ZXingBarcodeImageView>
+
+                            <Button x:Name="SaveBtn"
+                                    Clicked="SaveQrCode"
+                                    Margin="0,8,0,16"
+                                    IsVisible="False"
+                                    Style="{StaticResource ActionButtonStyle}"
+                                    VerticalOptions="EndAndExpand"
+                                    Text="Save QR code"/>
+                        </StackLayout>
+                    </Grid>
+                </Grid>
+            </ScrollView>
+        </Frame>
+    </StackLayout>
+</ContentPage>

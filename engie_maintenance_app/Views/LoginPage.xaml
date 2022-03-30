@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:interfaces="clr-namespace:engie_maintenance_app.Interfaces;assembly=engie_maintenance_app"
+             xmlns:image="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="engie_maintenance_app.Views.LoginPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Style="{StaticResource ToolbarLabelWithoutBackButtonStyle}"
+                   Text="Login Page"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <StackLayout BackgroundColor="{StaticResource EngieBlueColor}">
+        <Frame Style="{StaticResource RoundedFrameStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+        
+                <StackLayout Grid.Row="0" Margin="8,0">
+                    <image:SvgCachedImage Style="{StaticResource MainBlueLogo}"/>
+
+                    <Label Style="{StaticResource TitleLabelStyle}"
+                           Text="Log Into Your Account"/>
+                    
+                    <interfaces:CustomEntry x:Name="Email"
+                                            Placeholder="Email"
+                                            Style="{StaticResource LoginEntryStyle}"/>
+            
+                    <interfaces:CustomEntry x:Name="Password"
+                                            IsPassword="True"
+                                            Placeholder="Password"
+                                            Style="{StaticResource LoginEntryStyle}"/>
+
+                    <Button Clicked="ValidateUser"
+                            Style="{StaticResource ActionButtonStyle}"
+                            Text="LOGIN"/>
+
+                    <Button Clicked="ForgotPassword"
+                            HorizontalOptions="EndAndExpand"
+                            Style="{StaticResource SecondaryActionButtonStyle}"
+                            Text="Forgot Password?"/>
+                </StackLayout>
+                
+                <Grid Grid.Row="2" VerticalOptions="EndAndExpand" Margin="0,0,0,8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0"
+                           Style="{StaticResource NormalLabelStyle}"
+                           Text="Don't have an account?"/>
+
+                    <Button Clicked="RegisterRedirect"
+                            Grid.Column="1"
+                            Style="{StaticResource SecondaryActionButtonStyle}"
+                            Text="Create an account"/>
+                </Grid>
+            </Grid>
+        </Frame>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:image="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="engie_maintenance_app.Views.SettingsPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <NavigationPage.TitleView>
+        <Grid ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{OnPlatform Android=70, iOS=106}"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="140"/>
+            </Grid.ColumnDefinitions>
+            
+            <image:SvgCachedImage Grid.Column="1" Style="{StaticResource ToolbarLogoWithBackButtonStyle}"/>
+            
+            <Label Grid.Column="2"
+                   Style="{StaticResource ToolbarLabelWithBackButtonStyle}"
+                   Text="Settings"/>
+        </Grid>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{StaticResource EngieBlueColor}">
+            <Frame Style="{DynamicResource RoundedFrameStyle}">
+                <ScrollView VerticalScrollBarVisibility="Never">
+                    <StackLayout>
+                        <!--Header label for account setting-->
+                        <Label FontSize="{Binding FontSize1}"
+                               LineHeight="{OnPlatform Default=-1, Android=1.25}"
+                               Margin="16,0,0,0"
+                               HeightRequest="48"
+                               HorizontalOptions="FillAndExpand"
+                               Text="ACCOUNT"
+                               FontFamily="{OnPlatform iOS=Lato-Regular, Android=Lato-Regular.ttf#}"
+                               TextColor="{StaticResource EngieBlueColor}"
+                               VerticalTextAlignment="Center"
+                               VerticalOptions="Center" />
+                        
+                        <!--Grid for Change password label and navigation bar icon-->
+                        <Grid BackgroundColor="{Binding BackgroundColor}"
+                              ColumnSpacing="0"
+                              RowSpacing="0">
+                            
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" 
+                                                      Tapped="ChangePasswordClicked"/>
+                            </Grid.GestureRecognizers>
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <!--Change password icon-->
+                            <Label Grid.Column="0"
+                                   Margin="16,0,0,0"
+                                   Style="{DynamicResource IconLabelStyle}"
+                                   Text="{StaticResource Key}"/>
+                            
+                            <!--Change password label-->
+                            <Label
+                                Grid.Column="1"
+                                Style="{DynamicResource SettingsLabelStyle}"
+                                Text="Change Password"/>
+                            
+                            <!--Navigation icon-->
+                            <Label Grid.Column="2"
+                                   Style="{DynamicResource IconLabelStyle}"
+                                   Text="{StaticResource Next}"/>
+                        </Grid>
+                        
+                        <!--Grid for Delete History label and navigation bar icon-->
+                        <Grid x:Name="DeleteButton"
+                              BackgroundColor="{Binding BackgroundColor}"
+                              ColumnSpacing="0"
+                              IsVisible="False"
+                              RowSpacing="0">
+                            
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1"
+                                                      Tapped="DeleteAllHistory" />
+                            </Grid.GestureRecognizers>
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <!--Delete History icon-->
+                            <Label Grid.Column="0"
+                                   Margin="16,0,0,0"
+                                   Style="{DynamicResource IconLabelStyle}"
+                                   Text="{StaticResource Delete}"/>
+                            
+                            <!--Delete History label-->
+                            <Label Grid.Column="1"
+                                   Style="{DynamicResource SettingsLabelStyle}"
+                                   Text="Delete History"/>
+                            
+                            <!--Navigation icon-->
+                            <Label Grid.Column="2"
+                                   Style="{DynamicResource IconLabelStyle}"
+                                   Text="{StaticResource Next}"/>
+                        </Grid>
+                        <BoxView BackgroundColor="Transparent" HeightRequest="16"/>
+                        
+                        <!--Header label for appearance setting-->
+                        <Label FontSize="{Binding FontSize1}"
+                               LineHeight="{OnPlatform Default=-1, Android=1.25}"
+                               Margin="16,0,0,0"
+                               HeightRequest="48"
+                               HorizontalOptions="FillAndExpand"
+                               Text="APPEARANCE"
+                               FontFamily="{OnPlatform iOS=Lato-Regular, Android=Lato-Regular.ttf#}"
+                               TextColor="{StaticResource EngieBlueColor}"
+                               VerticalOptions="Center"
+                               VerticalTextAlignment="Center" />
+                        
+                        <!--Grid for Dark Mode label and navigation bar icon-->
+                        <Grid BackgroundColor="{Binding BackgroundColor}"
+                              ColumnSpacing="0"
+                              RowSpacing="0">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <!--Dark Mode icon-->
+                            <Label Grid.Column="0"
+                                   Margin="16,0,0,0"
+                                   Style="{DynamicResource IconLabelStyle}"
+                                   Text="{StaticResource Show}"/>
+                            
+                            <!--Dark Mode label-->
+                            <Label  Grid.Column="1"
+                                    Style="{DynamicResource SettingsLabelStyle}"
+                                    Text="Dark Mode" />
+                            
+                            <!--Switch-->
+                            <Switch Grid.Column="2"
+                                    Margin="8,0"
+                                    HeightRequest="28"
+                                    IsToggled="{Binding DarkMode}"
+                                    ThumbColor="{StaticResource EngieBlueColor}"
+                                    VerticalOptions="Center"/>
+                        </Grid>
+                        
+                        <!--Grid for Font size label-->
+                        <Grid BackgroundColor="{Binding BackgroundColor}"
+                              ColumnSpacing="0"
+                              RowSpacing="0">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            
+                             <!--Font size icon-->
+                            <Label Grid.Column="0"
+                                   Margin="16,0,0,0"
+                                   Style="{DynamicResource IconLabelStyle}"
+                                   FontFamily="{OnPlatform iOS=Lato-Regular, Android=Lato-Regular.ttf#}"
+                                   Text="F"/>
+                            
+                            <!--Font size label-->
+                            <Label Grid.Column="1"
+                                   Style="{DynamicResource SettingsLabelStyle}"
+                                   Text="{Binding FontSize8, StringFormat='Font Size: {0}'}" />
+                            
+                            <!--
+                            Stepper to increment the size
+                            Bindings dont seem to work for min/max
+                            -->
+                            <Stepper Grid.Column="2"
+                                     Increment="1" 
+                                     Margin="8,0"
+                                     Minimum="14" 
+                                     Maximum="26"
+                                     VerticalOptions="Center"
+                                     Value="{Binding FontSize8}"/>
+                        </Grid>
+                        <BoxView BackgroundColor="Transparent" HeightRequest="16" />
+                        
+                        <!--Header label for visual setting-->
+                        <Label FontSize="{Binding FontSize1}"
+                               LineHeight="{OnPlatform Default=-1, Android=1.25}"
+                               Margin="16,0,0,0"
+                               HeightRequest="48"
+                               HorizontalOptions="FillAndExpand"
+                               Text="LEGAL"
+                               FontFamily="{OnPlatform iOS=Lato-Regular, Android=Lato-Regular.ttf#}"
+                               TextColor="{StaticResource EngieBlueColor}"
+                               VerticalOptions="Center"
+                               VerticalTextAlignment="Center"/>
+                        
+                        <!--Grid for Privacy Policy label and navigation bar icon-->
+                        <Grid BackgroundColor="{Binding BackgroundColor}"
+                              ColumnSpacing="0"
+                              RowSpacing="0">
+                            
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1"
+                                                      Tapped="PrivacyPolicy"/>
+                            </Grid.GestureRecognizers>
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <!--Privacy Policy icon-->
+                            <Label Grid.Column="0"
+                                   Margin="16,0,0,0"
+                                   Style="{DynamicResource IconLabelStyle}"
+                                   Text="{StaticResource Question}"/>
+                            
+                            <!--Privacy Policy label-->
+                            <Label Grid.Column="1"
+                                   Style="{DynamicResource SettingsLabelStyle}"
+                                   Text="Privacy Policy"/>
+                            
+                            <!--Navigation icon-->
+                            <Label Grid.Column="2"
+                                   Style="{DynamicResource IconLabelStyle}"
+                                   Text="{StaticResource Next}"/>
+                        </Grid>
+                        
+                        <!--Grid for Terms of Use label and navigation bar icon-->
+                        <Grid BackgroundColor="{Binding BackgroundColor}"
+                              ColumnSpacing="0"
+                              RowSpacing="0">
+                            
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1"
+                                                      Tapped="TermsOfUse"/>
+                            </Grid.GestureRecognizers>
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <!--Terms of Use icon-->
+                            <Label Grid.Column="0"
+                                   Margin="16,0,0,0"
+                                   Style="{DynamicResource IconLabelStyle}"
+                                   Text="{StaticResource Exclamation}"/>
+                            
+                            <!--Terms of Use label-->
+                            <Label Grid.Column="1"
+                                   Style="{DynamicResource SettingsLabelStyle}"
+                                   Text="Terms of Use"/>
+                            
+                            <!--Navigation icon-->
+                            <Label Grid.Column="2"
+                                   Style="{DynamicResource IconLabelStyle}"
+                                   Text="{StaticResource Next}"/>
+                        </Grid>
+                        
+                        <!--Grid for Licences label and navigation bar icon-->
+                        <Grid BackgroundColor="{Binding BackgroundColor}"
+                              ColumnSpacing="0"
+                              RowSpacing="0">
+                            
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1"
+                                                      Tapped="Licences" />
+                            </Grid.GestureRecognizers>
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <!--Licences icon-->
+                            <Label Grid.Column="0"
+                                   Margin="16,0,0,0"
+                                   Style="{DynamicResource IconLabelStyle}"
+                                  Text="{StaticResource Code}"/>
+                                
+                            <!--Licences label-->
+                            <Label Grid.Column="1"
+                                  Style="{DynamicResource SettingsLabelStyle}"
+                                  Text="Licences"/>
+                            
+                            <!--Navigation icon-->
+                            <Label Grid.Column="2"
+                                   Style="{DynamicResource IconLabelStyle}"
+                                   Text="{StaticResource Next}"/>
+                        </Grid>
+                        
+                        <!--Logout button-->
+                        <Button Clicked="LogoutProtocol"
+                                Margin="8,0,8,16"
+                                Text="LOG OUT" 
+                                Style="{StaticResource ActionButtonStyle}"
+                                VerticalOptions="EndAndExpand"/>
+                    </StackLayout>
+                </ScrollView>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

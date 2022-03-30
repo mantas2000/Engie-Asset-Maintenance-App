@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:interfaces="clr-namespace:engie_maintenance_app.Interfaces;assembly=engie_maintenance_app"
+                    xmlns:image="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+                    x:Class="engie_maintenance_app.Views.Styles">
+        
+    <x:String x:Key="Next">&#xe71a;</x:String>
+    <x:String x:Key="Document">&#xe73a;</x:String>
+    <x:String x:Key="Exclamation">&#xe707;</x:String>
+    <x:String x:Key="Question">&#xe72c;</x:String>
+    <x:String x:Key="Code">&#xe753;</x:String>
+    <x:String x:Key="Key">&#xe73f;</x:String>
+    <x:String x:Key="Mail">&#xe725;</x:String>
+    <x:String x:Key="Delete">&#xe716;</x:String>
+    <x:String x:Key="Account">&#xe70e;</x:String>
+    <x:String x:Key="Show">&#xe711;</x:String>
+    
+    <Color x:Key="WhiteColor">#ffffff</Color>
+    <Color x:Key="EngieBlueColor">#00aaff</Color>
+    <Color x:Key="EngieGradientColor">#23d2b5</Color>
+        
+    <!--Common style for title label-->
+    <Style x:Key="TitleLabelStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontSize" Value="{Binding FontSize8}"/>
+        <Setter Property="Margin" Value="0,32"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="{StaticResource EngieBlueColor}"/>
+        <Setter Property="FontFamily" Value="{OnPlatform iOS=Lato-Bold, Android=Lato-Bold.ttf#}"/>
+    </Style>
+        
+    <!--Common style for icon label-->
+    <Style x:Key="IconLabelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="{OnPlatform iOS=UIFontIcons, Android=UIFontIcons.ttf#}"/>
+        <Setter Property="FontSize" Value="{Binding FontSize6}"/>
+        <Setter Property="Margin" Value="16,8"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="{Binding TextColor1}"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+    </Style> 
+        
+    <!--Common style for Settings Page Label-->
+    <Style x:Key="SettingsLabelStyle" TargetType="Label">
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="FontSize" Value="{Binding FontSize4}"/>
+        <Setter Property="Margin" Value="16, 8"/>
+        <Setter Property="MaxLines" Value="2"/>    
+        <Setter Property="TextColor" Value="{Binding TextColor1}"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="LineHeight" Value="{OnPlatform Default=-1, Android=1.5}"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="FontFamily" Value="{OnPlatform iOS=Lato-Regular, Android=Lato-Regular.ttf#}"/>
+    </Style>
+    
+    <!--Common style for Engie Blue Logo-->
+    <Style x:Key="MainBlueLogo" TargetType="image:SvgCachedImage">
+        <Setter Property="Margin" Value="85,32,85,0"/>
+        <Setter Property="Source" Value="resource://engie_maintenance_app.Resources.Images.logo_engie_blue.svg"/>
+    </Style>
+    
+    <!--Common style for separator BoxView-->
+    <Style x:Key="SeparatorStyle" TargetType="BoxView">
+        <Setter Property="BackgroundColor" Value="{StaticResource EngieBlueColor}"/>
+        <Setter Property="HeightRequest" Value="1"/>
+    </Style>
+    
+    <!--Common style for ListView Header Label-->
+    <Style x:Key="ListViewHeader" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontSize" Value="{Binding HeaderFontSize}"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="Text" Value="{Binding Header}"/>
+        <Setter Property="TextColor" Value="{Binding TextColor}"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="{OnPlatform iOS=Lato-Bold, Android=Lato-Bold.ttf#}"/>
+    </Style>
+    
+    <!--Common style for ListView Content Label-->
+    <Style x:Key="ListViewContent" TargetType="Label">
+        <Setter Property="FontSize" Value="{Binding ContentFontSize}"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="Text" Value="{Binding Content}"/>
+        <Setter Property="TextColor" Value="{Binding TextColor}"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="{OnPlatform iOS=Lato-Regular, Android=Lato-Regular.ttf#}"/>
+    </Style>
+    
+    <!--Common style for normal label-->
+    <Style x:Key="NormalLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="{Binding FontSize0}"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="{StaticResource EngieBlueColor}"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="{OnPlatform iOS=Lato-Regular, Android=Lato-Regular.ttf#}"/>
+    </Style>
+    
+    <!--Common style for Toolbar with Back Button label-->
+    <Style x:Key="ToolbarLabelWithBackButtonStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontSize" Value="{Binding FontSize8}"/>
+        <Setter Property="Margin" Value="0,0,8,0"/>
+        <Setter Property="HorizontalTextAlignment" Value="End"/>
+        <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="{OnPlatform iOS=Lato-Bold, Android=Lato-Bold.ttf#}"/>
+    </Style>
+    
+    <!--Common style for Toolbar without Back Button label-->
+    <Style x:Key="ToolbarLabelWithoutBackButtonStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontSize" Value="{Binding FontSize8}"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="{OnPlatform iOS=Lato-Bold, Android=Lato-Bold.ttf#}"/>
+    </Style>        
+        
+    <!--Common style for Toolbar with Back Button icon-->
+    <Style x:Key="ToolbarLogoWithBackButtonStyle" TargetType="image:SvgCachedImage">
+        <Setter Property="HeightRequest" Value="35"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="Source" Value="resource://engie_maintenance_app.Resources.Images.logo_engie_white.svg"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+    </Style>        
+    
+    <!--Common style for entry-->
+    <Style x:Key="LoginEntryStyle" TargetType="interfaces:CustomEntry">
+        <Setter Property="BackgroundColor" Value="{Binding BackgroundColor}"/>
+        <Setter Property="FontSize" Value="{Binding FontSize2}"/>
+        <Setter Property="HeightRequest" Value="48"/>
+        <Setter Property="Margin" Value="0,0,0,16"/>
+        <Setter Property="TextColor" Value="{Binding TextColor1}"/>
+        <Setter Property="PlaceholderColor" Value="{StaticResource EngieBlueColor}"/>
+        <Setter Property="FontFamily" Value="{OnPlatform iOS=Lato-Regular, Android=Lato-Regular.ttf#}"/>
+    </Style>
+    
+    <!--Common style for picker-->
+    <Style x:Key="PickerStyle" TargetType="interfaces:CustomPicker">
+        <Setter Property="BackgroundColor" Value="{Binding BackgroundColor}"/>
+        <Setter Property="SelectedIndex" Value="0"/>
+        <Setter Property="FontFamily" Value="{OnPlatform iOS=Lato-Regular, Android=Lato-Regular.ttf#}"/>
+    </Style>
+        
+    <!--Common style for action button-->
+    <Style x:Key="ActionButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource EngieBlueColor}"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontSize" Value="{Binding FontSize2}"/>
+        <Setter Property="HeightRequest" Value="48"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="FontFamily" Value="{OnPlatform iOS=Lato-Black, Android=Lato-Black.ttf#}"/>
+    </Style>
+    
+    <!--Common style for transparent action button-->
+    <Style x:Key="SecondaryActionButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontSize" Value="{Binding FontSize0}"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="TextColor" Value="{StaticResource EngieBlueColor}"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="FontFamily" Value="{OnPlatform iOS=Lato-Black, Android=Lato-Black.ttf#}"/>
+    </Style>
+        
+    <!--Common style for rounder frame-->
+    <Style x:Key="RoundedFrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="{Binding BackgroundColor}"/>
+        <Setter Property="HasShadow" Value="False"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="Margin" Value="0,0,0,-10"/>
+        <Setter Property="Padding" Value="0,10"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+    </Style>
+        
+    <!--Common style for Menu frame-->
+    <Style x:Key="MenuFrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="{StaticResource EngieBlueColor}"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="HasShadow" Value="True"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+    </Style>
+       
+    <!--Common style for Second Menu frame-->
+    <Style x:Key="SecondMenuFrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="{Binding BackgroundColor}"/>
+        <Setter Property="CornerRadius" Value="15"/>
+        <Setter Property="HasShadow" Value="True"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+    </Style>
+</ResourceDictionary>

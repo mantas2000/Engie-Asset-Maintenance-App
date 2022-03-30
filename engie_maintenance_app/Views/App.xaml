@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="engie_maintenance_app.Views.App">
+
+    <Application.Resources>
+        <!--Set styles here to apply throughout app-->
+        <ResourceDictionary>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="FontFamily" Value="LatoRegular"/>
+            </Style>
+
+            <Style x:Key="searchBarStyle" TargetType="SearchBar">
+                <Setter Property="FontFamily" Value="LatoRegular"/>
+            </Style>
+
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="LatoRegular"/>
+            </Style>
+
+            <Color x:Key="mRed">#00aaff</Color>
+            <Color x:Key="mWhite">#FFFFFF</Color>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource mRed}"/>
+                <Setter Property="BarTextColor" Value="{StaticResource mWhite}"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
+

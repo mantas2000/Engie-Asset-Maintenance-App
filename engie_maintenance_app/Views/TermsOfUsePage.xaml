@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:image="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:xForms="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             x:Class="engie_maintenance_app.Views.TermsOfUsePage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <NavigationPage.TitleView>
+        <Grid ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{OnPlatform Android=70, iOS=106}"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="140"/>
+            </Grid.ColumnDefinitions>
+            
+            <image:SvgCachedImage Grid.Column="1" Style="{StaticResource ToolbarLogoWithBackButtonStyle}"/>
+            
+            <Label Grid.Column="2"
+                   Style="{StaticResource ToolbarLabelWithBackButtonStyle}"
+                   Text="Terms of Use"/>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <StackLayout BackgroundColor="{StaticResource EngieBlueColor}">
+        <Frame BackgroundColor="{Binding BackgroundColor}"
+               Style="{StaticResource RoundedFrameStyle}">
+            
+            <StackLayout Padding="8,0">
+                <xForms:SfListView x:Name="TermsOfUseList"
+                                   AutoFitMode="DynamicHeight"
+                                   BackgroundColor="Transparent"
+                                   FocusBorderThickness="0"
+                                   IsScrollBarVisible="False"
+                                   ItemSpacing="0"
+                                   SelectionMode="None">
+                    
+                    <xForms:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout Margin="0,0,0,16">
+                                        <Label Style="{StaticResource ListViewHeader}"/>
+                                        <Label Style="{StaticResource ListViewContent}"/>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </xForms:SfListView.ItemTemplate>
+                </xForms:SfListView>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

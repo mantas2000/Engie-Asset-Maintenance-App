@@ -1,0 +1,147 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="AWSSDK.CognitoIdentity" Version="3.5.1.16" />
+    <PackageReference Include="AWSSDK.Core" Version="3.5.1.56" />
+    <PackageReference Include="AWSSDK.S3" Version="3.5.7.3" />
+    <PackageReference Include="Plugin.Fingerprint" Version="1.4.9" />
+    <PackageReference Include="sameerIOTApps.Plugin.SecureStorage" Version="2.5.0" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.0-beta" />
+    <PackageReference Include="Syncfusion.Xamarin.Expander" Version="18.4.0.35" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="18.4.0.35" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="18.3.0.47" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
+    <PackageReference Include="MySqlConnector" Version="1.2.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
+    <PackageReference Include="Xamarin.Plugin.FilePicker" Version="2.1.44-beta" />
+    <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Forms\TEST.pdf" />
+    <EmbeddedResource Include="Forms\TEST.pdf" />
+    <None Remove="Resources\Images\logo-engie-blue.png" />
+    <None Remove="Resources\Images\logo_engie_white.png" />
+    <None Remove="Resources\Images\lock_blue1.png" />
+    <None Remove="Resources\Images\tools.png" />
+    <None Remove="Resources\Images\tools_blue.png" />
+    <None Remove="Resources\Images\list_blue.png" />
+    <None Remove="Resources\Images\smartphone_hand_blue.png" />
+    <None Remove="Resources\Images\smartphone_hand_white.svg" />
+    <None Remove="Resources\Images\enlighten_blue.png" />
+    <None Remove="Resources\Images\document_upload_blue.png" />
+    <None Remove="Resources\Data\resourceData.json" />
+    <EmbeddedResource Include="Resources\Data\resourceData.json" />
+    <None Remove="Resources\Images\logo_engie_blue.svg" />
+    <EmbeddedResource Include="Resources\Images\logo_engie_blue.svg" />
+    <None Remove="Resources\Images\logo_engie_white.svg" />
+    <EmbeddedResource Include="Resources\Images\logo_engie_white.svg" />
+    <None Remove="Resources\Images\list_blue.svg" />
+    <EmbeddedResource Include="Resources\Images\list_blue.svg" />
+    <None Remove="Resources\Images\enlighten_blue.svg" />
+    <EmbeddedResource Include="Resources\Images\enlighten_blue.svg" />
+    <None Remove="Resources\Images\document_upload_blue.svg" />
+    <EmbeddedResource Include="Resources\Images\document_upload_blue.svg" />
+    <None Remove="Resources\Images\smartphone_hand_blue.svg" />
+    <EmbeddedResource Include="Resources\Images\smartphone_hand_blue.svg" />
+    <None Remove="Resources\Images\tools_blue.svg" />
+    <EmbeddedResource Include="Resources\Images\tools_blue.svg" />
+    <None Remove="Resources\Images\enveloppe_blue.svg" />
+    <None Remove="Resources\Images\envelope_blue.svg" />
+    <EmbeddedResource Include="Resources\Images\envelope_blue.svg" />
+    <EmbeddedResource Update="Views\LicencesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PrivacyPolicyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="DataAccessLayer\Serializer.cs" />
+    <Compile Update="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminPage.xaml.cs">
+      <DependentUpon>AdminPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ChangePasswordPage.xaml.cs">
+      <DependentUpon>ChangePassword.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ChangeRecipientAddressPage.xaml.cs">
+      <DependentUpon>ChangeRecipientAddressPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ForgotPasswordPage.xaml.cs">
+      <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\HelpPage.xaml.cs">
+      <DependentUpon>HelpPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\LicencesPage.xaml.cs">
+      <DependentUpon>LicencesPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PdfViewerPage.xaml.cs">
+      <DependentUpon>PdfViewerPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PrivacyPolicyPage.xaml.cs">
+      <DependentUpon>PrivacyPolicyPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\QrScanningPage.xaml.cs">
+      <DependentUpon>QrScanningPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\QueuePage.xaml.cs">
+      <DependentUpon>QueuePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RegistrationPage.xaml.cs">
+      <DependentUpon>RegistrationPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\TermsOfUsePage.xaml.cs">
+      <DependentUpon>TermsOfUsePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UploadNewFormPage.xaml.cs">
+      <DependentUpon>UploadNewFormPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Styles.xaml.cs">
+      <DependentUpon>Styles.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:image="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="engie_maintenance_app.Views.QueuePage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <NavigationPage.TitleView>
+        <Grid ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{OnPlatform Android=70, iOS=106}"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="140"/>
+            </Grid.ColumnDefinitions>
+            
+            <image:SvgCachedImage Grid.Column="1" Style="{StaticResource ToolbarLogoWithBackButtonStyle}"/>
+            
+            <Label Grid.Column="2"
+                   Style="{StaticResource ToolbarLabelWithBackButtonStyle}"
+                   Text="Queue"/>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <StackLayout BackgroundColor="{StaticResource EngieBlueColor}">
+        <Frame BackgroundColor="{Binding BackgroundColor}"
+               Style="{StaticResource RoundedFrameStyle}">
+
+            <StackLayout Padding="8,0">
+                <Label Style="{StaticResource TitleLabelStyle}" Text="Form History"/>
+
+                <ListView ios:ListView.RowAnimationsEnabled="false"
+                          x:Name="HistoryList"
+                          BackgroundColor="Transparent"
+                          HasUnevenRows="True"
+                          ItemsSource="{Binding FormsHistory}"
+                          ItemTapped="HistoryListClicked"
+                          SeparatorVisibility="None">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame BackgroundColor="{StaticResource EngieBlueColor}"
+                                       Margin="0,0,0,8"
+                                       HasShadow="False"
+                                       Padding="16"
+                                       Style="{StaticResource RoundedFrameStyle}">
+
+                                    <StackLayout>
+                                        <Label IsVisible="false" Text="{Binding FormHistoryId}"
+                                               FontFamily="{OnPlatform iOS=Lato-Bold, Android=Lato-Bold.ttf#}"/>
+
+                                        <Label FontSize="{Binding HeaderFontSize}"
+                                               Text="{Binding FormName}"
+                                               TextColor="{StaticResource WhiteColor}"
+                                               FontFamily="{OnPlatform iOS=Lato-Bold, Android=Lato-Bold.ttf#}"
+                                               VerticalOptions="Start"/>
+
+                                        <Label FontSize="{Binding ContentFontSize}"
+                                               HorizontalOptions="Start"
+                                               Text="{Binding Date, StringFormat='Date: {0:F0}'}"
+                                               FontFamily="{OnPlatform iOS=Lato-Regular, Android=Lato-Regular.ttf#}"
+                                               TextColor="{StaticResource WhiteColor}"
+                                               VerticalOptions="End"/>
+
+                                        <Label FontAttributes="Bold"
+                                               FontSize="{Binding StatusFontSize}"
+                                               HorizontalOptions="End"
+                                               Text="{Binding Status}"
+                                               FontFamily="{OnPlatform iOS=Lato-Black, Android=Lato-Black.ttf#}"
+                                               TextColor="{StaticResource WhiteColor}"
+                                               VerticalOptions="End"/>
+
+                                        <StackLayout>
+                                            <Button BackgroundColor="#009934"
+                                                    Clicked="EditSubmitClicked"
+                                                    IsVisible="{Binding EditButtonIsVisible}"
+                                                    Style="{StaticResource ActionButtonStyle}"
+                                                    FontSize="{Binding ContentFontSize}"
+                                                    Text="Edit/Submit"/>
+
+                                            <Button BackgroundColor="#009934"
+                                                    Clicked="ReSubmitClicked"
+                                                    IsVisible="{Binding RetryButtonIsVisible}"
+                                                    Style="{StaticResource ActionButtonStyle}"
+                                                    FontSize="{Binding ContentFontSize}"
+                                                    Text="Resubmit"/>
+
+                                            <Button BackgroundColor="#CC0033"
+                                                    Clicked="DeleteButton"
+                                                    IsVisible="{Binding DeleteButtonIsVisible}"
+                                                    Style="{StaticResource ActionButtonStyle}"
+                                                    FontSize="{Binding ContentFontSize}"
+                                                    Text="Delete"/>
+
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

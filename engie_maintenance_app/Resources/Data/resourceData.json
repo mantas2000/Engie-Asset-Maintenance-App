@@ -1,0 +1,152 @@
+{
+  "PublicFaq": [
+    {
+      "Header": "How do I scan a QR code?",
+      "Content": "To scan a QR code open go the main page by pressing the back button and press the 'QR scanner' page.\nThen when you bring your phone up to the QR page you wish the scan a popup will appear asking you if you wish to download the corresponding form for editing"
+    },
+    {
+      "Header": "How do I change settings?",
+      "Content": "To change app settings (Such as font size or dark mode) go the main page by pressing the back button and press the 'Settings' page.\nThen to change settings tap the toggles/buttons."
+    },
+    {
+      "Header": "How to access forms I have sent in the past?",
+      "Content": "To access old forms go the main page by pressing the back button and press the 'Queue' page.\nThe queue page shows all forms that you have scanned on this device including previously send forms as well as forms that failed to send or still need to be filled in.\nBy pressing the delete button you can also delete forms you no longer wish to see or scanned by mistake.\nBy going to the 'Settings' page (Described above) you can also delete the entire queue for the currently logged in user.\nDo not worry you cannot delete another user's files by mistake and will be asked to confirm you are sure you want to delete your queue."
+    },
+    {
+      "Header": "How do I add my signature to a form I am editing?",
+      "Content": "Tap on the comment icon in the bottom right corner, then tap the pen icon that appears, also in the bottom right corner. Now draw your signature and press done. Resize your signature image by dragging one of the corners. Now move into the correct place with one finger"
+    },
+    {
+      "Header": "I downloaded a form and started editing it but didn't submit, where has it gone?",
+      "Content": "Press the back button to return to the main page, now press the queue page button and a list of all your downloaded forms will be there."
+    },
+    {
+      "Header": "How do I log out?",
+      "Content": "Press the back button to return to the main page, then press settings and click the log out button at the bottom of the screen."
+    }
+  ],
+  "AdminFaq": [
+    {
+      "Header": "How do I add a new form and QR code?",
+      "Content": "To upload a form go to 'Upload new form', select the form you want to upload by pressing 'Open form' (The form MUST be a fillable PDF in order for it to be editable).\nThen just select the form category and name. You will be given a QR code to print off and attach to the asset after pressing 'Upload form and generate QR code'."
+    },
+    {
+      "Header": "How do I change the form email recipients?",
+      "Content": "Press the back button to return to the admin home page, then click the recipients button. Select a form type from the drop down and press submit to see the current recipient address for that type of form. To change the recipient email address enter a new email in the field below and press submit. All forms of the selected form type will now be sent to that email address."
+    },
+    {
+      "Header": "How do I change settings?",
+      "Content": "To change app settings (Such as font size or dark mode) go the main page by pressing the back button and press the 'Settings' page.\nThen to change settings tap the toggles/buttons."
+    },
+    {
+      "Header": "How do I log out?",
+      "Content": "Press the back button to return to the main page, then press settings and click the log out button at the bottom of the screen."
+    }
+  ],
+  "Licences": [
+    {
+      "Header": "Xamarin - MIT",
+      "Content": "https://github.com/xamarin/Xamarin.Forms/blob/5.0.0/LICENSE"
+    },
+    {
+      "Header": "MySQL Connector for .NET - GPL2.0",
+      "Content": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+    },
+    {
+      "Header": "Xamarin Plugin Settings/Media - MIT",
+      "Content": "https://github.com/jamesmontemagno/Xamarin.Plugins/blob/master/LICENSE.md"
+    },
+    {
+      "Header": "Zximg.Net.Mobile - Copyright",
+      "Content": "https://github.com/Redth/ZXing.Net.Mobile/blob/master/LICENSE.txt"
+    },
+    {
+      "Header": "SQL Kata - MIT",
+      "Content": "https://github.com/sqlkata/querybuilder/blob/master/LICENSE"
+    },
+    {
+      "Header": "Syncfusion - Community Licence",
+      "Content": "https://www.syncfusion.com/products/communitylicense"
+    }
+  ],
+  "PrivacyPolicy": [
+    {
+      "Header": "Privacy Policy of Engie",
+      "Content": "In the course of its business, ENGIE S.A., with registered office at 1 place Samuel de Champlain, 92930 Paris La Défense Cedex, France, is required to process a great deal of personal data (employees, clients, subcontractors and providers, etc.).\n\nAware of the importance of such data, ENGIE S.A. is committed to the protection thereof in accordance with the General Data Protection Regulation (GDPR). As a responsible business, ENGIE S.A. has drawn up this privacy policy to clarify its commitments, which are based on the main principles of the GDPR.\n\nThus, ENGIE assumes the following commitments:\n- to ensure clear and transparent information at all times regarding how it uses personal data;\n- to collect personal data for specified, explicit and legitimate purposes only;\n- to ensure at all times that the data collected is adequate, relevant and limited to the corresponding purpose;\n- to erase or anonymise the personal data it processes on completion of the corresponding retention periods;\n- to ensure the security and confidentiality of the personal data it processes;\n- to guarantee the data subjects' option to exercise their rights in the applicable terms; and\n- not to re-use the data collected for purposes other than those for which it was originally collected.\n\nENGIE S.A. is the controller of the personal data relating to the management of the website you are visiting (engie.com). This policy provides all the information necessary for you to understand how your data is processed.\nIn order to comply with personal data protection regulations, ENGIE S.A. has appointed a Data Protection Officer (DPO)."
+    },
+    {
+      "Header": "1. Purpose of processing and types of data collected",
+      "Content": "While you are logged on to the engie.com website, you may provide us with personal data such as :\n- Identification data \n- Connection data (IP addresses, event logs).\n\nThe data collected will be used for the following:\nto ensure content performance and provide the best possible user experience.\n\nWith this data, we can focus the structure and routes preferred by users. For example, making it easy to download a press release or optimising the search for information on engie.com by suggesting the shortest possible route, etc. Your personal data will not be processed further in any way that is incompatible with the purposes described above."
+    },
+    {
+      "Header": "2. Not all the personal data collected is compulsory. Automated decision-making",
+      "Content": "The processing does not involve automated decision-making."
+    },
+    {
+      "Header": "3. The legal basis for processing your data",
+      "Content": "\"The data contained in this form are collected by ENGIE SA on the basis of consent.\""
+    },
+    {
+      "Header": "4. Retention period",
+      "Content": "Your personal data is kept only for the time required for the corresponding purposes."
+    },
+    {
+      "Header": "5. Data recipients",
+      "Content": "As part of the data-processing, the Engie SA service providers responsible for the website are given access to the personal data collected. Should your data be disclosed to other third parties, i.e. internal services at ENGIE SA, ENGIE will comply with applicable law on the communication of personal data."
+    },
+    {
+      "Header": "6. Free text",
+      "Content": "The information given on the forms must be objective and must not be excessive or insulting in any case. The forms must not contain sensitive data or information (racial or ethnic origin; political, philosophical or religious opinions; trade union membership; data concerning health or sex life; offences, convictions or detention orders).\n\nFor your information, please note that this type of information will not be processed and will be erased."
+    },
+    {
+      "Header": "7. Security and confidentiality of your data",
+      "Content": "In its capacity as data controller, Engie S.A. has in place appropriate measures to ensure the security and confidentiality of your personal data and, in particular, to prevent it from being distorted, damaged or accessed by unauthorised third parties."
+    },
+    {
+      "Header": "8. Your rights",
+      "Content": "In accordance with applicable regulations, you may request the correction or erasure of your data by logging into the account you created during registration. You may also exercise your rights of opposition, limitation and data-portability.\n\nYou may also exercise all and any of these rights by contacting us at:\nhttps://engiegbs.service-now.com/gdpr_portal?id=gdpr_subject_access_request&sysparm_source=%20engiedotcom\nby post to Direction des communications - 1 place Samuel Champlain, Faubourg de l’Arche 92930 Courbevoie, France.\n\nYou are also hereby informed that you may submit a request to the CNIL (Commission Nationale de l'Informatique et des Libertés, the French Data Protection Authority). You may access its site at https://www.cnil.fr/fr."
+    },
+    {
+      "Header": "9. Our DPO's contact details",
+      "Content": "ENGIE has appointed a Data Protection Officer with the Commission Nationale de l'Informatique et des Libertés (CNIL), who may be contacted as follows:\n- by post: Département Protection des Données ENGIE, 1 place Samuel de Champlain - 92930 Paris La Défense - Cedex - France,\n- at https://engiegbs.service-now.com/gdpr_portal?id=gdpr_home"
+    }
+  ],
+  "TermsOfUse": [
+    {
+      "Header": "Terms of use",
+      "Content": "Welcome to Engie application (hereinafter the “Application”).Please read these terms of use (hereinafter the “Terms”), and any special terms stated on the pages of the Application, which govern your use of Engie Application.\n\nThese Terms cover your rights and legal responsibilities, and become applicable as soon as you start to use this Application. This Application is available to you free of charge (except for Internet connection costs) for your personal use, subject to compliance with the Terms set out below.\n\nBy accessing, visiting and/or using this Application, you acknowledge that you have read, understood and agree to be bound by these Terms, and that you undertake to comply with all relevant laws and regulations. If you do not agree to these Terms, please do not use this Application.\n\nYou undertake to access the information provided on this Application exclusively for personal and non commercial use. You may only use the Application for legitimate purposes. It may not be used or misappropriated for purposes contrary to Public Order and Morality. The content of these Terms of use may change. We therefore advise you to read them regularly."
+    },
+    {
+      "Header": "1. Legal information",
+      "Content": "This Application is the property of ENGIE Group, a public limited company with capital of 2,435,285,011 euros, entered in the Nanterre Register of Companies under number 542 107 651.ENGIE’s head office is located at Tour T1, 1 place Samuel de Champlain, Faubourg de l’Arche, 92930 Paris La Défense cedex, France (tel.: +33 (0)1 44 22 00 00)."
+    },
+    {
+      "Header": "2. Limitation of liability and guarantees",
+      "Content": "As a user of the Application, you acknowledge that you have the necessary skills and means to access and use this Application. ENGIE and its contributors make every effort to ensure that the information provided on this Application is accurate and up-to-date, reserving the right to modify the content at any time and without notice. However, they cannot guarantee that this information is complete, or that it has not been modified by a third party (hacking, virus, etc.). ENGIE and its contributors also accept no liability (direct or indirect) in the event of delay, error or omission with regard to the contents and use of these pages and in the event of the service being interrupted or unavailable.\n\nYou agree that you have been informed that the Application is accessible 24 hours a day, 7 days a week, except in the event of force majeure, server problems, problems caused by the telecommunications network infrastructures or other technical difficulties. ENGIE may occasionally shut down its Application for maintenance purposes. In this case, it will make every effort to notify users in advance.\n\nENGIE is not responsible for delays, operating problems or incompatibility between the Application and files, your browser or any other programme used for access to the Application.\n\nENGIE may under no circumstances be held liable for any direct or indirect damage resulting from or subsequent to third-party distribution of a virus by means of our Application, which may infect your computer system following connection to this Application, use of this Application or browsing on this Application. Likewise, ENGIE may not be held liable for any material or consequential damage (including but not limited to technical failure, disclosure of confidential documents and data loss), or for any other indirect damage, arising from or associated with the use of the Application.\n\nENGIE makes every possible effort to ensure that the information provided on the Application is accurate and up-to-date, and reserves the right to correct the content at any time and without prior notice. However, ENGIE and its contributors make no undertaking and assume no liability, under any circumstances whatsoever, with regard to the relevance, continuity, accuracy, absence of errors, veracity, timeliness, fair and commercial nature, quality, validity and availability of the information contained in this Application. Each Internet user shall be fully responsible for the risks incurred by giving credence to this information. Incorrect information or omissions may be encountered arising from typographical or formatting errors. If you find any such errors, please inform us so that we can make the relevant corrections.\n\nThe information on the Application is provided “as seen”, without guarantee of any kind, whether implied or explicit. ENGIE categorically rejects any interpretation that seeks to represent the content of the Application an offer of purchase or an incitement to purchase shares or other securities, whether listed or unlisted, of ENGIE, or any one of its direct or indirect subsidiaries or affiliate companies.\n\nENGIE reserves the right to modify any content of the Application at its sole discretion. Pursuant to its policy of updating and improving the Application, ENGIE may decide to modify these Terms. Any dated information published on the Application is valid exclusively for the specified date.\n\nUsers are also reminded that the confidentiality of correspondence cannot be guaranteed on the network and that every Internet user is responsible for taking all appropriate measures to protect their own data and/or software from contamination by any viruses that may be circulating on the Internet.\n\nThe Application includes links to other ENGIE applications or ENGIE Group companies likely to have their own legal conditions, which should be read and complied with."
+    },
+    {
+      "Header": "3. Access codes and passwords",
+      "Content": "Some services on the Application require an access code and password. These access codes and passwords are confidential, personal and nontransferable. You are responsible for their management, safekeeping and for the consequences of their use. You are responsible for taking the measures necessary for their protection and safekeeping. ENGIE may under no circumstances be held liable for any fraudulent use.\n\nFor security reasons, access to secure sections will be automatically barred after several failed access attempts. ENGIE reserves the right to suspend access to the Application in the event of fraud or attempted fraud in the use of a password or access code. In the event of your access being suspended, ENGIE will notify you.\n\nThe information recorded by the application’s computer system when the user logs on will constitute evidence of any actions performed by the user on the Application, and evidence that those actions have been processed."
+    },
+    {
+      "Header": "4. Intellectual property",
+      "Content": "The Application is fully subject to French law on copyright, trademarks and, in general, on intellectual property. The ENGIE trademarks and logos (semi-figurative trademarks) shown on the Application are registered trademarks. Any full or partial reproduction or representation, alone or in company with other elements, without the prior express written authorisation of ENGIE is strictly forbidden.\n\nThe general structure, software, texts, images, videos, sounds, know-how, animations, and more generally all information and content shown on the Application, are the property of ENGIE or are subject to rights of use or exploitation. These elements are subject to copyright law.\n\nAny full or partial representation, modification, reproduction, distortion, of all or part of the Application or its contents, by any procedure whatsoever and in any medium whatsoever, constitutes an infringement sanctioned by articles L 335-2 of Intellectual Property Code.\n\nThese Terms do not grant you any licence for the use of trademarks, logos or photographs belonging to ENGIE. Any databases appearing on the Application are protected by the legal provisions for the protection of databases. In this respect, ENGIE expressly prohibits any re-use, reproduction or extraction of elements of these databases. The user shall be held liable for any such reuse, reproduction or extraction.\n\nENGIE reserves the right to delete immediately and without prior notice any content – message, text, image or graphic that contravenes the laws and regulations in force and particularly the regulations specified above.\n\nIf you wish to use some of the Application content (text, image, etc), you must obtain prior express written authorisation from ENGIE, by writing to the address given in the paragraph “Legal information” or by sending an e-mail to the webmaster."
+    },
+    {
+      "Header": "5. Hyperlinks",
+      "Content": "ENGIE may not be held liable for hyperlinks to other applications, and particularly for the content of those applications.\nENGIE is not liable for hyperlinks from other sites to this Application and no such links may be set up without its prior written autorisation."
+    },
+    {
+      "Header": "6. Cautionary statement on forward-looking data",
+      "Content": "The Application may contain certain information that does not rely on historical facts and that makes statements about the future, including – but not limited to – statements that are predictions of future events, trends, plans or objectives. Such statements are based on the current views and assumptions of management and are subject to significant risks and uncertainties that could cause actual results to differ materially from those expressed or implied in the forward-looking statements (or from past results). Additional information regarding these risks and uncertainties is set out in the documents filed by ENGIE with the relevant authorities. Forward-looking statements represent predictions made on a certain date, and ENGIE makes no undertaking to update or revise them, whether in response to new information, future events or for any other reason."
+    },
+    {
+      "Header": "7. General clauses",
+      "Content": "Any assignment or other transfer of the rights granted under these conditions is strictly forbidden. If, for any reason whatsoever, a competent court were to rule that a provision of these Terms is invalid, the invalidity of that provision will not in any way affect the validity of the remaining Terms, which will remain in force. Failure by one of the parties to exercise a right or to institute legal proceedings under the terms of these Terms shall not be deemed to be a waiver of such a right or such proceedings. The Application is subject to French law. These Terms will be governed by and interpreted in accordance with French Law."
+    },
+    {
+      "Header": "8. Information to potential users of ethics whistleblowing system ethics@engie.com",
+      "Content": "Entity responsible for the whistleblowing system: ENGIE SA.\n\nObjectives pursued and areas concerned:\nFinancial, accounting, banking and anti-corruption\nAnti-competitive practices\nFight against discrimination and harassment in the workplace\nHealth, occupational health and safety\nProtection of the environment\n\nThe ethics whistleblowing system ethics@engie.com is open to all stakeholders of the ENGIE Group: employees, regardless of their employment status, customers, suppliers … Its use is strictly voluntary and can not be made compulsory.\n\nRecipients of alerts: people who are specifically responsible for handling ethical alerts. It is not excluded that information collected by this device may be communicated to another entity of the Group in order to allow the processing of ethical reporting in accordance with legal provisions, in particular by taking all necessary measures to ensure compliance with confidentiality and security of the elements thus transmitted.\n\nTransfer outside the EU: where applicable, these transfers are supervised by the ENGIE Group BCRs.\n\nThe persons identified under this scheme may exercise their right of access and rectification directly to: ethics@engie.com.\n\nThere is no risk of prosecution on the bona fide user of this device.\n\nAny abuse of the device may be prosecuted."
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:interfaces="clr-namespace:engie_maintenance_app.Interfaces;assembly=engie_maintenance_app"
+             xmlns:image="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="engie_maintenance_app.Views.RegistrationPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Margin="{OnPlatform Android='0,0,70,0', iOS='0,0,25,0'}"
+                   Style="{StaticResource ToolbarLabelWithoutBackButtonStyle}"
+                   Text="Registration Page"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <StackLayout BackgroundColor="{StaticResource EngieBlueColor}">
+        <Frame Style="{StaticResource RoundedFrameStyle}">
+            <ScrollView VerticalScrollBarVisibility="Never">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                
+                    <StackLayout Grid.Row="0" Margin="8,0">
+                        <image:SvgCachedImage Style="{StaticResource MainBlueLogo}"/>
+
+                        <Label Style="{StaticResource TitleLabelStyle}"
+                               Text="Create an Account"/>
+                        
+                        <interfaces:CustomEntry x:Name="Username"
+                                                Placeholder="Username"
+                                                Style="{StaticResource LoginEntryStyle}"/>
+                        
+                        <interfaces:CustomEntry x:Name="Email"
+                                                Placeholder="Email"
+                                                Style="{StaticResource LoginEntryStyle}"/>
+                    
+                        <interfaces:CustomEntry x:Name="Password"
+                                                IsPassword="True"
+                                                Placeholder="Password"
+                                                Style="{StaticResource LoginEntryStyle}"/>
+                        
+                        <interfaces:CustomPicker x:Name="EngineerType"
+                                                 FontSize="{Binding FontSize3}"
+                                                 HeightRequest="48"
+                                                 Margin="0,0,0,16"
+                                                 TextColor="{Binding TextColor1}"
+                                                 FontFamily="{OnPlatform iOS=Lato-Regular, Android=Lato-Regular.ttf#}"
+                                                 Title="What type of engineer are you?"
+                                                 TitleColor="{StaticResource EngieBlueColor}">
+                        </interfaces:CustomPicker>
+                        
+                        <interfaces:CustomPicker x:Name="RoleType"
+                                                 FontSize="{Binding FontSize3}"
+                                                 HeightRequest="48"
+                                                 Margin="0,0,0,16"
+                                                 TextColor="{Binding TextColor1}"
+                                                 FontFamily="{OnPlatform iOS=Lato-Regular, Android=Lato-Regular.ttf#}"
+                                                 Title="Please select your role type"
+                                                 TitleColor="{StaticResource EngieBlueColor}">
+                            <Picker.Items>
+                                <x:String>Public</x:String>
+                                <x:String>Admin</x:String>
+                            </Picker.Items>
+                        </interfaces:CustomPicker>
+                        
+                        <interfaces:CustomEntry x:Name="EmailValidationCode"
+                                                IsVisible="False"
+                                                Placeholder="Enter code send via email"
+                                                Style="{StaticResource LoginEntryStyle}"/>
+
+                        <Button x:Name="SubmitCodeButton"
+                                Clicked="VerifyCode"
+                                IsVisible="False"
+                                Style="{StaticResource ActionButtonStyle}"
+                                Text="Submit"/>
+                        
+                        <Button x:Name="SignupButton"
+                                Clicked="RegistrationProtocol"
+                                Style="{StaticResource ActionButtonStyle}"
+                                Text="SIGNUP"/>
+                    </StackLayout>
+
+                    <Grid Grid.Row="2" Margin="0,0,0,8" VerticalOptions="EndAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                               Style="{StaticResource NormalLabelStyle}"
+                               Text="Already have an account?"/>
+
+                        <Button Clicked="LoginRedirect"
+                                Grid.Column="1"
+                                Style="{StaticResource SecondaryActionButtonStyle}"
+                                Text="Login"/>
+                    </Grid>
+                </Grid>
+            </ScrollView>
+        </Frame>
+    </StackLayout>      
+</ContentPage>
