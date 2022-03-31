@@ -2,8 +2,8 @@ ENGIE: Asset Maintenance App - Team Project
 ====================
 
 <p align="left">
-  <img src="/images/engie-login.png" height="500" />
-  <img src="/images/engie-home.png" height="500" />
+  <img src="/images/engie-login.png" width="30%" />
+  <img src="/images/engie-home.png" width="30%" />
 </p>
 
 About:
